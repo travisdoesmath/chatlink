@@ -69,7 +69,7 @@ function getLink(node) {
     return url
 }
 
-const config = { childList: true, subtree: true };
+const config = { childList: true, subtree: true, attributes: true };
 
 const observer = new MutationObserver((mutationList, observer) => {
     for (const mutation of mutationList) {
@@ -79,6 +79,14 @@ const observer = new MutationObserver((mutationList, observer) => {
                 if (childNode.querySelector && childNode.querySelector('.eWw5ab')) {
                     inject(childNode.querySelector('.eWw5ab'))
                 }
+                if (childNode.tagName && childNode.tagName.toLowerCase() === 'body') {
+                    for (const elem of childNode.querySelectorAll('.eWw5ab')) { inject(elem) }
+                }
+            }
+        } else if (mutation.type === 'attributes') {
+            //if (mutation.target.querySelector('.eWe5ab')) {
+            if (mutation.target.tagName.toLowerCase() === 'body') {
+                for (const elem of mutation.target.querySelectorAll('.eWw5ab')) { inject(elem) }
             }
         }
     }
