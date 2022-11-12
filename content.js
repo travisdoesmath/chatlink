@@ -76,7 +76,6 @@ const observer = new MutationObserver((mutationList, observer) => {
                 }
             }
         } else if (mutation.type === 'attributes') {
-            //if (mutation.target.querySelector('.eWe5ab')) {
             if (mutation.target.tagName.toLowerCase() === 'body') {
                 for (const elem of mutation.target.querySelectorAll('.eWw5ab')) { inject(elem) }
             }
