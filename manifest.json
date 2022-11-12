@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Chatlink",
+    "description": "Gets link to specific Google Chat without forwarding to email",
+    "version": "0.1",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["content.js"],
+            "matches": [
+                "https://*.google.com/*"
+            ],
+            "all_frames": true
+        }
+    ],
+    "permissions":["clipboardWrite"]
+}
