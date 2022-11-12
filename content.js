@@ -53,14 +53,6 @@ function inject(node) {
     }
 }
 
-function copyUrlToClipboard(url) {
-    const input = document.createElement('input')
-    input.value = url
-    input.focus()
-    document.execCommand('copy')
-
-}
-
 function getLink(node) {
     const parent = node.closest('c-wiz')
     const roomId = document.querySelector('body>c-wiz').getAttribute('data-group-id')
