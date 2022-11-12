@@ -4,7 +4,6 @@
     "description": "Gets link to specific Google Chat without forwarding to email",
     "version": "0.1",
     "action": {
-        "default_popup": "popup.html",
         "default_icon": "icon.png"
     },
     "content_scripts": [
@@ -15,6 +14,5 @@
             ],
             "all_frames": true
         }
-    ],
-    "permissions":["clipboardWrite"]
+    ]
 }

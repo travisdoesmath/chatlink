@@ -35,6 +35,7 @@ function inject(node) {
             if (!div.querySelector('input')) {
                 const url = getLink(div)
                 const tempInput = document.createElement('input')
+                tempInput.setAttribute('type', 'text')
                 tempInput.value = url
                 tempInput.addEventListener('focusout', () => {
                     svg.style.display = 'block';
@@ -44,8 +45,6 @@ function inject(node) {
                 span2.append(tempInput)
                 div.style.width = 'auto'
                 div.style.borderRadius = 0;
-                console.log(node)
-                //navigator.clipboard.writeText(url)
             }
         })
         div.append(span1)
